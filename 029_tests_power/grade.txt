@@ -1,0 +1,98 @@
+Grading at 01/28/2022:01:40:18.018130
+For commit ID 6ee2c7aed026a51ca203b94ee6c2cd9666974ded
+Grading at Thu Jan 27 20:40:17 EST 2022
+**Testing broken implementation 10 **
+-------------------------------------
+
+x=0, y=0, answer is 1, Right.
+x=3, y=1, answer is 3, Right.
+x=3, y=3, your answer is 3, Wrong.
+
+**Testing broken implementation 11 **
+-------------------------------------
+
+x=0, y=0, answer is 1, Right.
+x=3, y=1, answer is 3, Right.
+x=3, y=3, answer is 27, Right.
+x=2, y=0, answer is 1, Right.
+x=1, y=2, answer is 1, Right.
+x=-1, y=2, your answer is 49, Wrong.
+
+**Testing broken implementation 1 **
+-------------------------------------
+
+x=0, y=0, answer is 1, Right.
+x=3, y=1, your answer is 1, Wrong.
+
+**Testing broken implementation 2 **
+-------------------------------------
+
+x=0, y=0, answer is 1, Right.
+x=3, y=1, your answer is 1, Wrong.
+
+**Testing broken implementation 3 **
+-------------------------------------
+
+x=0, y=0, your answer is 0, Wrong.
+
+**Testing broken implementation 4 **
+-------------------------------------
+
+x=0, y=0, answer is 1, Right.
+x=3, y=1, answer is 3, Right.
+x=3, y=3, answer is 27, Right.
+x=2, y=0, answer is 1, Right.
+x=1, y=2, answer is 1, Right.
+x=-1, y=2, answer is 1, Right.
+x=-1, y=3, your answer is 65535, Wrong.
+
+**Testing broken implementation 5 **
+-------------------------------------
+
+x=0, y=0, answer is 1, Right.
+x=3, y=1, answer is 3, Right.
+x=3, y=3, your answer is 6, Wrong.
+
+**Testing broken implementation 6 **
+-------------------------------------
+
+x=0, y=0, answer is 1, Right.
+x=3, y=1, your answer is 2, Wrong.
+
+**Testing broken implementation 7 **
+-------------------------------------
+
+x=0, y=0, answer is 1, Right.
+x=3, y=1, answer is 3, Right.
+x=3, y=3, answer is 27, Right.
+x=2, y=0, answer is 1, Right.
+x=1, y=2, your answer is 9, Wrong.
+
+**Testing broken implementation 8 **
+-------------------------------------
+
+x=0, y=0, answer is 1, Right.
+x=3, y=1, answer is 3, Right.
+x=3, y=3, your answer is 9, Wrong.
+
+**Testing broken implementation 9 **
+-------------------------------------
+
+x=0, y=0, answer is 1, Right.
+x=3, y=1, your answer is 0, Wrong.
+
+**Testing correct implementation **
+-------------------------------------
+
+x=0, y=0, answer is 1, Right.
+x=3, y=1, answer is 3, Right.
+x=3, y=3, answer is 27, Right.
+x=2, y=0, answer is 1, Right.
+x=1, y=2, answer is 1, Right.
+x=-1, y=2, answer is 1, Right.
+x=-1, y=3, answer is -1, Right.
+
+All tests were ok.
+
+
+Overall Grade: PASSED
