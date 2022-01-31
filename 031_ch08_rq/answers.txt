@@ -9,6 +9,7 @@ C
 B
 D
 C
+B
 E
 C
 B
