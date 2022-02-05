@@ -1,0 +1,23 @@
+Grading at 02/05/2022:04:47:51.080732
+For commit ID 4ad4d9f3710d84a77236017f445266b92b0e604a
+Grading at Fri Feb  4 23:47:50 EST 2022
+Attempting to compile arrayMax.c 
+#################################################
+testcase1:
+Your file matched the expected output
+Your output matched what we expected
+Removing your main() and replacing it with our own to run more tests...
+#################################################
+testcase2:
+array size:0 was Correct
+#################################################
+testcase3:
+array size:1 was Correct
+#################################################
+testcase4:
+array size:100 was Correct
+#################################################
+testcase5:
+array size:5000 was Correct
+
+Overall Grade: A
