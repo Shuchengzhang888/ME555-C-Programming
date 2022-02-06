@@ -1,0 +1,30 @@
+Grading at 02/06/2022:05:40:00.188286
+For commit ID 4ad4d9f3710d84a77236017f445266b92b0e604a
+Grading at Sun Feb  6 00:39:59 EST 2022
+Doing some basic sanity checking:
+    - Do you have the correct files
+    - Does your code compile
+    - Are your functions named correctly
+==================== STEP1 ====================
+[32mSuccessfully compiled.[0m
+Checking for 'int seq1(int x)'
+[32mfound 'int seq1(int x)' in your source code 'step1.c'[0m
+Checking for 'void print_seq1_range(int low, int high)'
+[32mfound 'void print_seq1_range(int low, int high)' in your source code 'step1.c'[0m
+[32mno spurious debug output in step1.c[0m
+==================== STEP2 ====================
+[32mSuccessfully compiled.[0m
+Checking for 'int seq2(int x)'
+[32mfound 'int seq2(int x)' in your source code 'step2.c'[0m
+Checking for 'int sum_seq2(int low, int high)'
+[32mfound 'int sum_seq2(int low, int high)' in your source code 'step2.c'[0m
+[32mno spurious debug output in step2.c[0m
+==================== STEP3 ====================
+[32mSuccessfully compiled.[0m
+Checking for 'int seq3(int x, int y)'
+[32mfound 'int seq3(int x, int y)' in your source code 'step3.c'[0m
+Checking for 'int count_neg_seq3_range(int xLow, int xHi, int yLow, int yHi)'
+[32mfound 'int count_neg_seq3_range(int xLow, int xHi, int yLow, int yHi)' in your source code 'step3.c'[0m
+[32mno spurious debug output in step3.c[0m
+You have passed the pre-grader, but you should still perform extensive testing!
+Overall Grade: NO GRADE YET
