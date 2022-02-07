@@ -28,13 +28,13 @@ int main (){
   int array4[] = {-3, -5, -2, -1, 0};
   int array5[] = {1, 1, 1, 1, 1};
   int array6[] = {-6, -1, 0, 3, 99,};
-  int array7[] = {}; 
+  //int array7[] = {}; 
   test(array1, 5, 5);
   test(array2, 5, 1);
   test(array3, 5, 3);
   test(array4, 5, 4);
   test(array5, 5, 1);
   test(array6, 5, 5);
-  test(array7, 0, 0);
+  //test(array7, 0, 0);
   return 0;
 }
