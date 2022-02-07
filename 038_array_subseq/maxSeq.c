@@ -1,30 +1,23 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-size_t  maxSeq(int * array, size_t n){
-  if (n == 0){
+size_t maxSeq(int * array, size_t n) {
+  if (n == 0)
     return 0;
-  }
-  else{
-    int num = 1;
-    int numFixed =1;
-
-    for (size_t  i = 1; i < n; i++){
-      if (array[i-1] < array[i]){
-	num++;
-      }
-      else{
-	if (num < numFixed){
-	  numFixed = num;
-	}
-	num = 1;
-      }
+  size_t cnt = 0, num = 0;
+  for (size_t i = 1; i < n; i++) {
+    if (array[i - 1] < array[i]) {
+      cnt += 1;
     }
-
-    if (num < numFixed){
-      num = numFixed;
+    else {
+      if (num < cnt) {
+        num = cnt;
+      }
+      cnt = 0;
     }
-
-    return num;
   }
+  if (num < cnt) {
+    num = cnt;
+  }
+  return num + 1;
 }
