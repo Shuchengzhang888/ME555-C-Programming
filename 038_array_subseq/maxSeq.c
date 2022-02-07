@@ -14,7 +14,9 @@ size_t  maxSeq(int * array, size_t n){
 	num++;
       }
       else{
-	numFixed = num;
+	if (num < numFixed){
+	  numFixed = num;
+	}
 	num = 1;
       }
     }
