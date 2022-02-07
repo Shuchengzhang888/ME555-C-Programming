@@ -1,7 +1,7 @@
-Grading at 02/07/2022:21:47:01.149489
-For commit ID b58ad13105d7f90d5e89c754e0c0a11e16b05dd9
-Grading at Mon Feb  7 16:47:01 EST 2022
+Grading at 02/07/2022:21:49:11.405066
+For commit ID 878fc947b62e568170077c85d211fa2349c4639d
+Grading at Mon Feb  7 16:49:11 EST 2022
 Reading your quiz answers from answers.txt
-You have 2 wrong answers
+Your quiz answers are correct
 
-Overall Grade: B
+Overall Grade: A
