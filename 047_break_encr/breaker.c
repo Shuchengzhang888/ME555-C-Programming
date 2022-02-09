@@ -24,7 +24,10 @@ int decrypt(FILE *f){
     }
   }
   int key = findMax(freq, size) + 'a' - 'e';
-
+  if (key < 0){
+    key = key - ('a' - 'e') + size;
+  }
+  
   return key;
 }
 
