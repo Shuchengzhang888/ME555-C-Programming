@@ -2,8 +2,26 @@
 #include <stdlib.h>
 #include <string.h>
 
+void swap(char *a, char *b){
+  char temp = *a;
+  *a = *b;
+  *b = temp;
+}
+
 void reverse(char * str) {
-  //WRITE ME!
+  if (str == NULL){
+    return;
+  }
+  else{
+    int i = 0;
+    int j = strlen(str) - 1;
+
+    while(i < j){
+      swap(str+i, str+j);
+      i++;
+      j--;
+    }
+  }    
 }
 
 int main(void) {
