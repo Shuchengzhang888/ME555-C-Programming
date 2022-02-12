@@ -1,30 +1,356 @@
-Grading at 02/06/2022:05:40:00.188286
+Grading at 02/12/2022:18:05:50.570676
 For commit ID 4ad4d9f3710d84a77236017f445266b92b0e604a
-Grading at Sun Feb  6 00:39:59 EST 2022
-Doing some basic sanity checking:
-    - Do you have the correct files
-    - Does your code compile
-    - Are your functions named correctly
-==================== STEP1 ====================
-[32mSuccessfully compiled.[0m
-Checking for 'int seq1(int x)'
-[32mfound 'int seq1(int x)' in your source code 'step1.c'[0m
-Checking for 'void print_seq1_range(int low, int high)'
-[32mfound 'void print_seq1_range(int low, int high)' in your source code 'step1.c'[0m
-[32mno spurious debug output in step1.c[0m
-==================== STEP2 ====================
-[32mSuccessfully compiled.[0m
-Checking for 'int seq2(int x)'
-[32mfound 'int seq2(int x)' in your source code 'step2.c'[0m
-Checking for 'int sum_seq2(int low, int high)'
-[32mfound 'int sum_seq2(int low, int high)' in your source code 'step2.c'[0m
-[32mno spurious debug output in step2.c[0m
-==================== STEP3 ====================
-[32mSuccessfully compiled.[0m
-Checking for 'int seq3(int x, int y)'
-[32mfound 'int seq3(int x, int y)' in your source code 'step3.c'[0m
-Checking for 'int count_neg_seq3_range(int xLow, int xHi, int yLow, int yHi)'
-[32mfound 'int count_neg_seq3_range(int xLow, int xHi, int yLow, int yHi)' in your source code 'step3.c'[0m
-[32mno spurious debug output in step3.c[0m
-You have passed the pre-grader, but you should still perform extensive testing!
-Overall Grade: NO GRADE YET
+Grading at Sat Feb 12 13:05:42 EST 2022
+
+=========================================================================
+Step 1
+
+Attempting to compile step1.c -> step1
+Looking for int main
+Found on line 28, column 1 
+Checking that main actually returns a value
+Looking for int seq1(int)
+Found on line 12, column 1 
+Looking for void print_seq1_range(int,int) 
+Found on line 15, column 1 
+Removing your main and adding ours
+Attempting to compile removedmain.c -> removedmain
+ - seq1(-93) was Correct
+ - seq1(-5) was Correct
+ - seq1(-1) was Correct
+ - seq1(0) was Correct
+ - seq1(1) was Correct
+ - seq1(3) was Correct
+ - seq1(12) was Correct
+ - seq1(96) was Correct
+#################################################
+Removing your main() and replacing it with our own to test step1(C)
+Attempting to compile removedmain.c -> removedmain
+print_seq1_range(-99, -100) was Correct
+print_seq1_range(-99, -99) was Correct
+print_seq1_range(-99, 1) was Correct
+print_seq1_range(-99, 6) was Correct
+print_seq1_range(-99, 0) was Correct
+print_seq1_range(-99, 100) was Correct
+print_seq1_range(-3, -100) was Correct
+print_seq1_range(-3, -99) was Correct
+print_seq1_range(-3, 1) was Correct
+print_seq1_range(-3, 6) was Correct
+print_seq1_range(-3, 0) was Correct
+print_seq1_range(-3, 100) was Correct
+print_seq1_range(-1, -100) was Correct
+print_seq1_range(-1, -99) was Correct
+print_seq1_range(-1, 1) was Correct
+print_seq1_range(-1, 6) was Correct
+print_seq1_range(-1, 0) was Correct
+print_seq1_range(-1, 100) was Correct
+print_seq1_range(0, -100) was Correct
+print_seq1_range(0, -99) was Correct
+print_seq1_range(0, 1) was Correct
+print_seq1_range(0, 6) was Correct
+print_seq1_range(0, 0) was Correct
+print_seq1_range(0, 100) was Correct
+print_seq1_range(1, -100) was Correct
+print_seq1_range(1, -99) was Correct
+print_seq1_range(1, 1) was Correct
+print_seq1_range(1, 6) was Correct
+print_seq1_range(1, 0) was Correct
+print_seq1_range(1, 100) was Correct
+print_seq1_range(4, -100) was Correct
+print_seq1_range(4, -99) was Correct
+print_seq1_range(4, 1) was Correct
+print_seq1_range(4, 6) was Correct
+print_seq1_range(4, 0) was Correct
+print_seq1_range(4, 100) was Correct
+print_seq1_range(5, -100) was Correct
+print_seq1_range(5, -99) was Correct
+print_seq1_range(5, 1) was Correct
+print_seq1_range(5, 6) was Correct
+print_seq1_range(5, 0) was Correct
+print_seq1_range(5, 100) was Correct
+print_seq1_range(9, -100) was Correct
+print_seq1_range(9, -99) was Correct
+print_seq1_range(9, 1) was Correct
+print_seq1_range(9, 6) was Correct
+print_seq1_range(9, 0) was Correct
+print_seq1_range(9, 100) was Correct
+print_seq1_range(99, -100) was Correct
+print_seq1_range(99, -99) was Correct
+print_seq1_range(99, 1) was Correct
+print_seq1_range(99, 6) was Correct
+print_seq1_range(99, 0) was Correct
+print_seq1_range(99, 100) was Correct
+#################################################
+Removing your seq1/print_seq1_range and testing your main...
+Attempting to compile rmfns.c -> rmfns
+You have 5 test cases for seq1
+You have 8 test cases for print_seq1_range
+Step 1 Summary:
+   Part A (seq1):                  8 / 8 [11 pts]
+   Part B+D (main):                  8 / 8 [ 8 pts]
+   Part C (print_seq1_range):      54 / 54 [10 pts]
+   Code compiled without warnings:     Yes [ 2 pts]
+   Main properly returned an int:      Yes [ 2 pts] 
+
+Step 1 total                                             [33/33]
+
+=========================================================================
+Step 2
+
+Attempting to compile step2.c -> step2
+Looking for int main
+Found on line 43, column 1 
+Checking that main actually returns a value
+Looking for int seq2(int)
+Found on line 12, column 1 
+Looking for int int sum_seq2(int,int) 
+Found on line 29, column 1 
+#################################################
+Removing your main() and replacing it with our own to test seq (Part A)
+Attempting to compile removedmain.c -> removedmain
+seq2(-97) was Correct
+seq2(-5) was Correct
+seq2(-1) was Correct
+seq2(0) was Correct
+seq2(1) was Correct
+seq2(7) was Correct
+seq2(22) was Correct
+seq2(104) was Correct
+#################################################
+Removing your seq2/sum_seq2 and testing your main (B+D)...
+Attempting to compile rmfns.c -> rmfns
+For seq2, you have 5 test cases (2 negative, 3 positive)
+For sumSeq, ou have 9 total test cases (2/2)
+  o 3 tested for an empty range 
+  o 0 tested for a range of size 1 
+  o 6 tested for a larger range 
+#################################################
+Removing your main() and replacing it with our own for sum_seq2(Part C)
+Attempting to compile removedmain.c -> removedmain
+sum_seq2(-100, -99) was Correct
+sum_seq2(-100, -99) was Correct
+sum_seq2(-100, 4) was Correct
+sum_seq2(-100, 5) was Correct
+sum_seq2(-100, 0) was Correct
+sum_seq2(-100, 99) was Correct
+sum_seq2(-3, -99) was Correct
+sum_seq2(-3, -99) was Correct
+sum_seq2(-3, 4) was Correct
+sum_seq2(-3, 5) was Correct
+sum_seq2(-3, 0) was Correct
+sum_seq2(-3, 99) was Correct
+sum_seq2(-1, -99) was Correct
+sum_seq2(-1, -99) was Correct
+sum_seq2(-1, 4) was Correct
+sum_seq2(-1, 5) was Correct
+sum_seq2(-1, 0) was Correct
+sum_seq2(-1, 99) was Correct
+sum_seq2(0, -99) was Correct
+sum_seq2(0, -99) was Correct
+sum_seq2(0, 4) was Correct
+sum_seq2(0, 5) was Correct
+sum_seq2(0, 0) was Correct
+sum_seq2(0, 99) was Correct
+sum_seq2(1, -99) was Correct
+sum_seq2(1, -99) was Correct
+sum_seq2(1, 4) was Correct
+sum_seq2(1, 5) was Correct
+sum_seq2(1, 0) was Correct
+sum_seq2(1, 99) was Correct
+sum_seq2(4, -99) was Correct
+sum_seq2(4, -99) was Correct
+sum_seq2(4, 4) was Correct
+sum_seq2(4, 5) was Correct
+sum_seq2(4, 0) was Correct
+sum_seq2(4, 99) was Correct
+sum_seq2(5, -99) was Correct
+sum_seq2(5, -99) was Correct
+sum_seq2(5, 4) was Correct
+sum_seq2(5, 5) was Correct
+sum_seq2(5, 0) was Correct
+sum_seq2(5, 99) was Correct
+sum_seq2(9, -99) was Correct
+sum_seq2(9, -99) was Correct
+sum_seq2(9, 4) was Correct
+sum_seq2(9, 5) was Correct
+sum_seq2(9, 0) was Correct
+sum_seq2(9, 99) was Correct
+sum_seq2(99, -99) was Correct
+sum_seq2(99, -99) was Correct
+sum_seq2(99, 4) was Correct
+sum_seq2(99, 5) was Correct
+sum_seq2(99, 0) was Correct
+sum_seq2(99, 99) was Correct
+Step 2 Summary:
+   Part A (seq2):                  8 / 8 [11 pts]
+   Part B+D (main):               9 / 10 [ 9 pts]
+   Part C (sum_seq2):            54 / 54 [10 pts]
+Code compiled without warnings: YES      [ 2 pts]
+
+Step 2 total                                             [32/33]
+
+=========================================================================
+Step 3
+
+Attempting to compile step3.c -> step3
+Looking for int main
+Found on line 36, column 1 
+Checking that main actually returns a value
+Looking for int seq3(int,int)
+Found on line 13, column 1 
+Looking for int int count_neg_seq3_range(int,int,int,int) 
+Found on line 19, column 1 
+#################################################
+Removing your main() and replacing it with our own to test step3(A)
+Attempting to compile removedmain.c -> removedmain
+seq3(-99, -99) was Correct
+seq3(-99, -5) was Correct
+seq3(-99, 0) was Correct
+seq3(-99, 5) was Correct
+seq3(-99, 99) was Correct
+seq3(-3, -99) was Correct
+seq3(-3, -5) was Correct
+seq3(-3, 0) was Correct
+seq3(-3, 5) was Correct
+seq3(-3, 99) was Correct
+seq3(-1, -99) was Correct
+seq3(-1, -5) was Correct
+seq3(-1, 0) was Correct
+seq3(-1, 5) was Correct
+seq3(-1, 99) was Correct
+seq3(0, -99) was Correct
+seq3(0, -5) was Correct
+seq3(0, 0) was Correct
+seq3(0, 5) was Correct
+seq3(0, 99) was Correct
+seq3(1, -99) was Correct
+seq3(1, -5) was Correct
+seq3(1, 0) was Correct
+seq3(1, 5) was Correct
+seq3(1, 99) was Correct
+seq3(4, -99) was Correct
+seq3(4, -5) was Correct
+seq3(4, 0) was Correct
+seq3(4, 5) was Correct
+seq3(4, 99) was Correct
+seq3(5, -99) was Correct
+seq3(5, -5) was Correct
+seq3(5, 0) was Correct
+seq3(5, 5) was Correct
+seq3(5, 99) was Correct
+seq3(9, -99) was Correct
+seq3(9, -5) was Correct
+seq3(9, 0) was Correct
+seq3(9, 5) was Correct
+seq3(9, 99) was Correct
+seq3(99, -99) was Correct
+seq3(99, -5) was Correct
+seq3(99, 0) was Correct
+seq3(99, 5) was Correct
+seq3(99, 99) was Correct
+#################################################
+Removing your seq3/count_neg_seq3_range and testing your main (B+D)...
+Attempting to compile rmfn.c -> rmfn
+You have 13 total test cases
+  o You have no test cases where x or y is 0 (0/1)
+  o You have 3 test cases with x Negative and y Negative (1/1)
+  o You have 2 test cases with x Negative and y Positive (1/1)
+  o You have 5 test cases with x Positive and y Negative (1/1)
+  o You have 3 test cases with x Positive and y Positive (1/1)
+You had 5 test cases with non-empty ranges (4/4)
+You had 3 test cases with an empty range (1/1)
+#################################################
+Removing your main() and replacing it with our own to test step3(C)
+Attempting to compile removedmain.c -> removedmain
+count_neg_seq3_range(-99, -100, -5, -99) was Correct
+count_neg_seq3_range(-99, -100, -5, 0) was Correct
+count_neg_seq3_range(-99, -100, -5, 105) was Correct
+count_neg_seq3_range(-99, -100, 0, -99) was Correct
+count_neg_seq3_range(-99, -100, 0, 0) was Correct
+count_neg_seq3_range(-99, -100, 0, 105) was Correct
+count_neg_seq3_range(-99, -100, 20, -99) was Correct
+count_neg_seq3_range(-99, -100, 20, 0) was Correct
+count_neg_seq3_range(-99, -100, 20, 105) was Correct
+count_neg_seq3_range(-99, 0, -5, -99) was Correct
+count_neg_seq3_range(-99, 0, -5, 0) was Correct
+count_neg_seq3_range(-99, 0, -5, 105) was Correct
+count_neg_seq3_range(-99, 0, 0, -99) was Correct
+count_neg_seq3_range(-99, 0, 0, 0) was Correct
+count_neg_seq3_range(-99, 0, 0, 105) was Correct
+count_neg_seq3_range(-99, 0, 20, -99) was Correct
+count_neg_seq3_range(-99, 0, 20, 0) was Correct
+count_neg_seq3_range(-99, 0, 20, 105) was Correct
+count_neg_seq3_range(-99, 100, -5, -99) was Correct
+count_neg_seq3_range(-99, 100, -5, 0) was Correct
+count_neg_seq3_range(-99, 100, -5, 105) was Correct
+count_neg_seq3_range(-99, 100, 0, -99) was Correct
+count_neg_seq3_range(-99, 100, 0, 0) was Correct
+count_neg_seq3_range(-99, 100, 0, 105) was Correct
+count_neg_seq3_range(-99, 100, 20, -99) was Correct
+count_neg_seq3_range(-99, 100, 20, 0) was Correct
+count_neg_seq3_range(-99, 100, 20, 105) was Correct
+count_neg_seq3_range(0, -100, -5, -99) was Correct
+count_neg_seq3_range(0, -100, -5, 0) was Correct
+count_neg_seq3_range(0, -100, -5, 105) was Correct
+count_neg_seq3_range(0, -100, 0, -99) was Correct
+count_neg_seq3_range(0, -100, 0, 0) was Correct
+count_neg_seq3_range(0, -100, 0, 105) was Correct
+count_neg_seq3_range(0, -100, 20, -99) was Correct
+count_neg_seq3_range(0, -100, 20, 0) was Correct
+count_neg_seq3_range(0, -100, 20, 105) was Correct
+count_neg_seq3_range(0, 0, -5, -99) was Correct
+count_neg_seq3_range(0, 0, -5, 0) was Correct
+count_neg_seq3_range(0, 0, -5, 105) was Correct
+count_neg_seq3_range(0, 0, 0, -99) was Correct
+count_neg_seq3_range(0, 0, 0, 0) was Correct
+count_neg_seq3_range(0, 0, 0, 105) was Correct
+count_neg_seq3_range(0, 0, 20, -99) was Correct
+count_neg_seq3_range(0, 0, 20, 0) was Correct
+count_neg_seq3_range(0, 0, 20, 105) was Correct
+count_neg_seq3_range(0, 100, -5, -99) was Correct
+count_neg_seq3_range(0, 100, -5, 0) was Correct
+count_neg_seq3_range(0, 100, -5, 105) was Correct
+count_neg_seq3_range(0, 100, 0, -99) was Correct
+count_neg_seq3_range(0, 100, 0, 0) was Correct
+count_neg_seq3_range(0, 100, 0, 105) was Correct
+count_neg_seq3_range(0, 100, 20, -99) was Correct
+count_neg_seq3_range(0, 100, 20, 0) was Correct
+count_neg_seq3_range(0, 100, 20, 105) was Correct
+count_neg_seq3_range(99, -100, -5, -99) was Correct
+count_neg_seq3_range(99, -100, -5, 0) was Correct
+count_neg_seq3_range(99, -100, -5, 105) was Correct
+count_neg_seq3_range(99, -100, 0, -99) was Correct
+count_neg_seq3_range(99, -100, 0, 0) was Correct
+count_neg_seq3_range(99, -100, 0, 105) was Correct
+count_neg_seq3_range(99, -100, 20, -99) was Correct
+count_neg_seq3_range(99, -100, 20, 0) was Correct
+count_neg_seq3_range(99, -100, 20, 105) was Correct
+count_neg_seq3_range(99, 0, -5, -99) was Correct
+count_neg_seq3_range(99, 0, -5, 0) was Correct
+count_neg_seq3_range(99, 0, -5, 105) was Correct
+count_neg_seq3_range(99, 0, 0, -99) was Correct
+count_neg_seq3_range(99, 0, 0, 0) was Correct
+count_neg_seq3_range(99, 0, 0, 105) was Correct
+count_neg_seq3_range(99, 0, 20, -99) was Correct
+count_neg_seq3_range(99, 0, 20, 0) was Correct
+count_neg_seq3_range(99, 0, 20, 105) was Correct
+count_neg_seq3_range(99, 100, -5, -99) was Correct
+count_neg_seq3_range(99, 100, -5, 0) was Correct
+count_neg_seq3_range(99, 100, -5, 105) was Correct
+count_neg_seq3_range(99, 100, 0, -99) was Correct
+count_neg_seq3_range(99, 100, 0, 0) was Correct
+count_neg_seq3_range(99, 100, 0, 105) was Correct
+count_neg_seq3_range(99, 100, 20, -99) was Correct
+count_neg_seq3_range(99, 100, 20, 0) was Correct
+count_neg_seq3_range(99, 100, 20, 105) was Correct
+Step 3 Summary:
+   Part A (seq3):                 45 / 45 [12 pts]
+   Part B+D (main):                9 / 10 [ 9 pts]
+   Part C (count_neg_seq3_range): 81 / 81 [10 pts]
+Code compiled without warnings: YES       [ 2 pts]
+
+Step 3 total                                             [33/34]
+
+=========================================================================
+
+Overall Grade: 98
