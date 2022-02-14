@@ -1,43 +1,36 @@
 #include<stdlib.h>
 #include<stdio.h>
 
-void rotate(FILE *f){
-  int c;
-  int i = 0, j = 0;
-  int matrix[10][10];
-  
-  while ((c = fgetc(f)) != EOF) {
-    if (c != '\n') {
-      if (i >= 10) {
-        perror("wrong number of row");
-       
-      }
-      matrix[j++][10 - i - 1] = c;
+
+void rotate(FILE * f) {
+  char output[10][10];
+  char l[11];
+  int lineNum = 0;
+  while (fgets(l, 12, f) != NULL) {
+    lineNum++;
+    if (lineNum > 10) {
+      fprintf(stderr, "The input file has more than 10 lines.\n");
+      exit(EXIT_FAILURE);
     }
-    else {
-      if (j != 10) {
-        perror("wrong number of col");
-      }
-      i++;
-      j = 0;
+    if (l[10] != '\n') {
+      fprintf(stderr, "The char numbers on line %d is not correct.\n", lineNum);
+      exit(EXIT_FAILURE);
+    }
+    for (int i = 0; i < 10; i++) {
+      output[i][10 - lineNum] = l[i];
     }
   }
-  if (i < 10) {
-    perror("wrong number of row");
+  if (lineNum < 10) {
+    fprintf(stderr, "The input file has less than 10 lines.\n");
+    exit(EXIT_FAILURE);
   }
-  
-  i = 0;
-  j = 0;
-  
-  for (i = 0; i < 10; i++) {
-    for (j = 0; j < 10; j++) {
-      printf("%c", matrix[i][j]);
+  for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 10; j++) {
+      fprintf(stdout, "%c", output[i][j]);
     }
-    printf("\n");
+    fprintf(stdout, "\n");
   }
 }
-
-
 
 
 
@@ -61,5 +54,5 @@ int main(int argc, char ** argv) {
   }
   
  
-  return 0;
+  return EXIT_SUCCESS;
 }
