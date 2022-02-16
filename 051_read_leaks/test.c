@@ -18,7 +18,7 @@ int main(void) {
   *r = NULL;
   q = malloc(2 * sizeof(*q));
   p = q;
+  free(q);
   q = NULL;
-  free(p);
   return EXIT_SUCCESS;
 }
