@@ -42,8 +42,30 @@ void addRandomMine(board_t * b) {
 
 board_t * makeBoard(int w, int h, int numMines) {
   //WRITE ME!
-  return NULL;
+  board_t * b = malloc(sizeof(*b));
+  b->height = h;
+  b->width = w;
+  b->totalMines = numMines;
+  b->board = malloc(b->height * sizeof(*b->board));
+
+  for (int i =0; i < b->width; i++){
+    b->board[i]=malloc(b->width * sizeof(*b->board[i]));
+  }
+
+  for (int i = 0; i < b->height; i++) {
+    for (int j = 0; j < b->width; j++) {
+      b->board[i][j] = UNKNOWN;
+      //printf("%d", b->board[i][j]);
+    }
+  }
+  for (int i = 0; i < numMines; i++) {
+    addRandomMine(b);
+  }
+
+  return b;
 }
+
+
 void printBoard(board_t * b) {    
   int found = 0;
   printf("    ");
@@ -96,8 +118,20 @@ void printBoard(board_t * b) {
 }
 int countMines(board_t * b, int x, int y) {
   //WRITE ME!
-  return 0;
+  int dx[] = {-1, -1, -1, 0, 0, 1, 1, 1};
+  int dy[] = {1, 0, -1, 1, -1, 1, 0, -1};
+  int cnt = 0;
+  for (int i = 0; i < 8; i++) {
+    int tx = x + dx[i];
+    int ty = y + dy[i];
+    if (tx >= 0 && tx < b->width && ty >= 0 && ty < b->height && IS_MINE(b->board[ty][tx])) {
+      cnt += 1;
+    }
+  }
+  return cnt;
 }
+
+
 int click (board_t * b, int x, int y) {
   if (x < 0 || x >= b->width ||
       y < 0 || y >= b->height) {
@@ -105,8 +139,7 @@ int click (board_t * b, int x, int y) {
   }
   if (b->board[y][x] == KNOWN_MINE) {
     return CLICK_KNOWN_MINE;
-  }
-  if (b->board[y][x] == HAS_MINE) {
+  }  if (b->board[y][x] == HAS_MINE) {
     return CLICK_LOSE;
   }
   if (b->board[y][x] != UNKNOWN) {
@@ -119,11 +152,23 @@ int click (board_t * b, int x, int y) {
 
 int checkWin(board_t * b) {
   //WRITE ME!
-  return 0;
+  for (int i = 0; i < b->height; i++) {
+    for (int j = 0; j < b->width; j++) {
+      if (b->board[i][j] == UNKNOWN) {
+        return 0;
+      }
+    }
+  }
+  return 1;
 }
 
 void freeBoard(board_t * b) {
   //WRITE ME!
+  for (int i = 0; i < b->height; i++){
+    free(b->board[i]);
+  }
+  free(b->board);
+  free(b);
 }
 
 int readInt(char ** linep, size_t * lineszp) {
