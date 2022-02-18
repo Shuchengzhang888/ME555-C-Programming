@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 //This function is used to figure out the ordering
 //of the strings in qsort.  You do not need
 //to modify it.
@@ -15,44 +14,43 @@ int stringOrder(const void * vp1, const void * vp2) {
 void sortData(char ** data, size_t count) {
   qsort(data, count, sizeof(char *), stringOrder);
 }
-
-void func(FILE * f) {
-  char * str = NULL;
+void toArray(FILE *f){
+  char * line = NULL;
   size_t sz = 0;
-  int len = 0;
-  char ** str_array = NULL;
-  int cnt = 0;
-  while ((len = getline(&str, &sz, f)) != EOF) {
-    str_array = realloc(str_array, ++cnt * sizeof(*str_array));
-    str_array[cnt - 1] = str;
-    str = NULL;
-    sz = 0;
+  ssize_t len = 0;
+  int cou = 0;
+  char ** array =NULL;
+  while((len = getline(&line, &sz, f)) != EOF){
+      cou++;
+      array = realloc(array, cou * sizeof(*array));
+      array[cou-1] = line;
+      line = NULL;
+      sz = 0;
   }
-  sortData(str_array, cnt);
-  for (int i = 0; i < cnt; i++) {
-    fprintf(stdout, "%s", str_array[i]);
-    free(str_array[i]);
+  sortData(array,cou);
+  for (int i = 0; i < cou; i++ ){
+    fprintf(stdout, "%s", array[i]);
+    free(array[i]);
   }
-  free(str_array);
-  free(str);
+  free(array);
+  free(line);
 }
 
 int main(int argc, char ** argv) {
-  
   //WRITE YOUR CODE HERE!
-  if (argc == 1) {
-    func(stdin);
+  if (argc == 1){
+    toArray(stdin);
   }
-  else {
-    for (int i = 1; i < argc; i++) {
-      FILE * f = fopen(argv[i], "r");
-      if (f == NULL) {
-        fprintf(stderr, "Can not find file");
+  else{
+    for (int i = 1; i < argc; i++){
+      FILE *f = fopen(argv[i],"r");
+      if (f == NULL){
+        fprintf(stderr,"Can not open file");
         exit(EXIT_FAILURE);
       }
-      func(f);
-      if (fclose(f)) {
-        fprintf(stderr, "Failed to close file");
+      toArray(f);
+      if(fclose(f)){
+        fprintf(stderr,"Fail to close file");
         exit(EXIT_FAILURE);
       }
     }
