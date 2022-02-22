@@ -1,0 +1,51 @@
+Grading at 02/22/2022:04:41:38.087984
+For commit ID b6a60ff761a64bc91d3e0457e127a6b4a3952c16
+Grading at Mon Feb 21 23:41:37 EST 2022
+Doing some basic checking for your submission
+
+stats.c and stats.h exist (good)
+Attempting to compile stats.c
+rm -f stats.o *~ printStats printGamePerformance addGameStats printBreakout
+cc    -c -o stats.o stats.c
+gcc -o printStats printStats.o stats.o
+gcc -o printGamePerformance printGamePerformance.o stats.o
+gcc -o addGameStats addGameStats.o stats.o
+gcc -o printBreakout printBreakout.o stats.o
+
+Step 1
+Testing ./printStats simple_stats.txt
+Your file matched the expected output
+Test case PASSED
+Testing ./printStats stats2.txt
+Your file matched the expected output
+Test case PASSED
+
+Step 2
+Testing ./printGamePerformance simple_stats.txt simple_game.txt
+Your file matched the expected output
+Test case PASSED
+Testing ./printGamePerformance stats2.txt game2.txt
+Your file matched the expected output
+Test case PASSED
+
+Step 3
+Testing ./addGameStats simple_stats.txt simple_game.txt
+Your file matched the expected output
+Test case PASSED
+Testing ./addGameStats stats2.txt game2.txt
+Your file matched the expected output
+Test case PASSED
+
+Step 4
+Testing ./printBreakout simple_stats.txt simple_game.txt
+Your file matched the expected output
+Test case PASSED
+Testing ./printBreakout stats2.txt game2.txt
+Line_1_did_not_match
+Your file did not match the expected output
+Test case FAILED
+
+You have NOT passed the pregrader's test cases.
+You should go back and debug the indicated step(s).
+
+Overall Grade: NO GRADE YET
