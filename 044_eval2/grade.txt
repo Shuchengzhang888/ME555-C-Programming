@@ -1,6 +1,6 @@
-Grading at 02/22/2022:22:42:42.496500
-For commit ID dd52709e4ea4db52e6a67d3ff9844c2d7ef49894
-Grading at Tue Feb 22 17:42:41 EST 2022
+Grading at 02/22/2022:22:49:43.261973
+For commit ID 45b77390e0d02218652bec120b55f97920ffb245
+Grading at Tue Feb 22 17:49:42 EST 2022
 Doing some basic checking for your submission
 
 stats.c and stats.h exist (good)
@@ -41,11 +41,10 @@ Testing ./printBreakout simple_stats.txt simple_game.txt
 Your file matched the expected output
 Test case PASSED
 Testing ./printBreakout stats2.txt game2.txt
-Line_1_did_not_match
-Your file did not match the expected output
-Test case FAILED
+Your file matched the expected output
+Test case PASSED
 
-You have NOT passed the pregrader's test cases.
-You should go back and debug the indicated step(s).
+You have passed the pregrader's test cases, but you should still
+do extensive testing of your own.
 
 Overall Grade: NO GRADE YET
