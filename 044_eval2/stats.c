@@ -39,7 +39,7 @@ stat_t parseLine(const char * line) {
       exit(EXIT_FAILURE);
     }
     else{
-      if (i < MAX_NAME_LEN){
+      if (i < MAX_NAME_LEN - 1){
         p.player[i] = line[i];
         i++;
       }
@@ -163,7 +163,7 @@ void printBreakout(stat_t * statarr, unsigned long * pointarr, size_t nplayers) 
       per[i] = (double)pointarr[i] / ((double)statarr[i].points / (double)statarr[i].games);
     }
     else{
-      per[i] = 1000;
+      per[i] = -1;
     }
   }
 
@@ -173,11 +173,13 @@ void printBreakout(stat_t * statarr, unsigned long * pointarr, size_t nplayers) 
       max = i;
     }
   }
-
-  if (per[max] == 1000){
-    printf("infinity %%\n");
-  }
-  else{
-    printf("The breakout player this game is %s with %.0f%% of avg ppg\n", statarr[max].player, per[max]*100);
-  }
+  printf("The breakout player this game is %s with %.0f%% of avg ppg\n", statarr[max].player, per[max]*100);
+  
+  //if (per[max] == 1000){
+  //  printf("The breakout player this game is %s with infinity%% of avg ppg\n", statarr[max].player);
+  //}
+  //else{
+  //  printf("The breakout player this game is %s with %.0f%% of avg ppg\n", statarr[max].player, per[max]*100);
+  //}
+  
 }
