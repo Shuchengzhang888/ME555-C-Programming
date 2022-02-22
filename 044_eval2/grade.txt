@@ -1,6 +1,6 @@
-Grading at 02/22/2022:22:33:31.756953
-For commit ID 6e492f393e30daf47d44f24c1f5beecf11f23b54
-Grading at Tue Feb 22 17:33:31 EST 2022
+Grading at 02/22/2022:22:42:42.496500
+For commit ID dd52709e4ea4db52e6a67d3ff9844c2d7ef49894
+Grading at Tue Feb 22 17:42:41 EST 2022
 Doing some basic checking for your submission
 
 stats.c and stats.h exist (good)
