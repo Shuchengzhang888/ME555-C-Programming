@@ -175,7 +175,7 @@ void printBreakout(stat_t * statarr, unsigned long * pointarr, size_t nplayers) 
   }
 
   if (per[max] == 1000){
-    printf("The breakout player this game is %s with infinity%% of avg ppg\n", statarr[max].player);
+    printf("infinity %%");
   }
   else{
     printf("The breakout player this game is %s with %.0f%% of avg ppg\n", statarr[max].player, per[max]*100);
