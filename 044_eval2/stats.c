@@ -159,12 +159,7 @@ void printBreakout(stat_t * statarr, unsigned long * pointarr, size_t nplayers) 
 
   double per[nplayers];
   for (size_t i = 0; i < nplayers; i++){
-    if (statarr[i].points != 0){
       per[i] = (double)pointarr[i] / ((double)statarr[i].points / (double)statarr[i].games);
-    }
-    else{
-      per[i] = 1000;
-    }
   }
 
   size_t max = 0;
@@ -173,12 +168,5 @@ void printBreakout(stat_t * statarr, unsigned long * pointarr, size_t nplayers) 
       max = i;
     }
   }
-  
-  if (per[max] == 1000){
-    printf("The breakout player this game is %s with infinity%% of avg ppg\n", statarr[max].player);
-  }
-  else{
-    printf("The breakout player this game is %s with %.0f%% of avg ppg\n", statarr[max].player, per[max]*100);
-  }
-  
+  printf("The breakout player this game is %s with %.0f%% of avg ppg\n", statarr[max].player, per[max]*100);
 }
