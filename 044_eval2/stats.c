@@ -58,12 +58,12 @@ stat_t parseLine(const char * line) {
   int flag = 0;
   do{
     ///The situation of 0 points
-    if (first_colon[1] == 0 && first_colon[2] == ':'){
+    if (first_colon[1] == '0' && first_colon[2] == ':'){
       flag = 1;
       break;
     }
     ///Make sure it just includes digits and be positive and the number is not 0 beginning
-    if (!isdigit(first_colon[i]) || (i == 1 && first_colon[i] == '0' && flag == 1)){
+    if (!isdigit(first_colon[i]) || (first_colon[1] == '0' && flag == 0)){
       fprintf(stderr, "The point number is not valid.");
       exit(EXIT_FAILURE);
     }
@@ -78,12 +78,13 @@ stat_t parseLine(const char * line) {
   flag = 0;
   do{
     ///The situation of 0 points
-    if (second_colon[1] == 0 && second_colon[2] == '\0'){
+    if (second_colon[1] == '0' && second_colon[2] == '\0'){
       flag = 1;
       break;
     }
+    
     ///Make sure it just includes digits and be positive and the number is not 0 beginning
-    if (!isdigit(second_colon[i]) || (i ==1 && second_colon[i] == '0' && flag)){
+    if (!isdigit(second_colon[i]) || (second_colon[1] == '0' && flag == 0)){
       fprintf(stderr, "The games number is not valid.");
       exit(EXIT_FAILURE);
     }
@@ -92,6 +93,11 @@ stat_t parseLine(const char * line) {
   ///parse whole string to unsigned long
   p.games = strtoul(second_colon + 1, &endptr, 10);
 
+  if(p.games == 0 && p.points != 0){
+    fprintf(stderr, "The games number is not valid.");
+    exit(EXIT_FAILURE);
+  }
+  
   return p;  
 }
 
