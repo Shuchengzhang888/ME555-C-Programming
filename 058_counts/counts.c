@@ -6,7 +6,7 @@
 counts_t * createCounts(void) {
   //WRITE ME
   counts_t * array = malloc(sizeof(*array));
-  array->type = malloc(sizeof(*array->type));
+  //array->type = malloc(sizeof(*array->type));
   array->type = NULL;
   array->len = 0;
   array->times_unknown = 0;
@@ -33,7 +33,7 @@ void addCount(counts_t * c, const char * name) {
   c->type[c->len - 1] = malloc(sizeof(*c->type[c->len - 1]));
   c->type[c->len - 1]->value = malloc(sizeof(strlen(name) + 1));
   int i = 0;
-  while(*name != '\0'){
+  while(*name!= '\0'){
       c->type[c->len - 1]->value[i] = *name;
       name ++;
       i ++;
