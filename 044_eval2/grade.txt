@@ -1,8 +1,6 @@
-Grading at 02/22/2022:22:49:43.261973
+Grading at 02/27/2022:20:15:17.694705
 For commit ID 45b77390e0d02218652bec120b55f97920ffb245
-Grading at Tue Feb 22 17:49:42 EST 2022
-Doing some basic checking for your submission
-
+Grading at Sun Feb 27 15:14:56 EST 2022
 stats.c and stats.h exist (good)
 Attempting to compile stats.c
 rm -f stats.o *~ printStats printGamePerformance addGameStats printBreakout
@@ -12,39 +10,59 @@ gcc -o printGamePerformance printGamePerformance.o stats.o
 gcc -o addGameStats addGameStats.o stats.o
 gcc -o printBreakout printBreakout.o stats.o
 
+=========================================================================
 Step 1
-Testing ./printStats simple_stats.txt
-Your file matched the expected output
-Test case PASSED
-Testing ./printStats stats2.txt
-Your file matched the expected output
-Test case PASSED
 
+Test case 1: passed [2/2]
+Test case 2: passed [2/2]
+Test case 3: passed [2/2]
+Test case 4: passed [2/2]
+Test case 5: passed [2/2]
+Test case 6: passed [2/2]
+Test case 7: passed [2/2]
+Test case 8: failed (wrong exit status) [0/2]
+Test case 9: passed [2/2]
+Test case 10: passed [4/4]
+Test case 11: passed [4/4]
+Test case 12: passed [3/3]
+Test case 13: failed [0/3]
+Test case 14: passed [3/3]
+
+Step 1 total                                             [30/35]
+
+=========================================================================
 Step 2
-Testing ./printGamePerformance simple_stats.txt simple_game.txt
-Your file matched the expected output
-Test case PASSED
-Testing ./printGamePerformance stats2.txt game2.txt
-Your file matched the expected output
-Test case PASSED
 
+Test case 1: passed [3/3]
+Test case 2: passed [3/3]
+Test case 3: passed [3/3]
+Test case 4: passed [3/3]
+Test case 5: passed [4/4]
+Test case 6: passed [4/4]
+
+Step 2 total                                             [20/20]
+
+=========================================================================
 Step 3
-Testing ./addGameStats simple_stats.txt simple_game.txt
-Your file matched the expected output
-Test case PASSED
-Testing ./addGameStats stats2.txt game2.txt
-Your file matched the expected output
-Test case PASSED
 
+Test case 1: passed [3/3]
+Test case 2: passed [3/3]
+Test case 3: passed [3/3]
+Test case 4: passed [3/3]
+Test case 5: passed [4/4]
+Test case 6: passed [4/4]
+
+Step 3 total                                             [20/20]
+
+=========================================================================
 Step 4
-Testing ./printBreakout simple_stats.txt simple_game.txt
-Your file matched the expected output
-Test case PASSED
-Testing ./printBreakout stats2.txt game2.txt
-Your file matched the expected output
-Test case PASSED
 
-You have passed the pregrader's test cases, but you should still
-do extensive testing of your own.
+Test case 1: passed [5/5]
+Test case 2: passed [5/5]
+Test case 3: passed [5/5]
+Test case 4: passed [5/5]
+Test case 5: passed [5/5]
 
-Overall Grade: NO GRADE YET
+Step 4 total                                             [25/25]
+
+Overall Grade: 95
