@@ -2,59 +2,62 @@
 #include <stdlib.h>
 #include <string.h>
 #include "counts.h"
+
 counts_t * createCounts(void) {
   //WRITE ME
-  counts_t * c = malloc(sizeof(*c));
-  c->array = NULL;
-  c->size = 0;
-  c->cnt_unknown = 0;
-  c->array = NULL;
-  return c;
+  counts_t * array = malloc(sizeof(*array));
+  array->type = malloc(sizeof(*array->type));
+  array->type = NULL;
+  array->len = 0;
+  array->times_unknown = 0;
+  return array;
 }
 void addCount(counts_t * c, const char * name) {
   //WRITE ME
-  if (name == NULL) {
-    c->cnt_unknown++;
-    return;
-  }
-  int i = 0;
-  for (i = 0; i < c->size; i++) {
-    if (strcmp(name, c->array[i]->string) == 0) {  //name existed.
-      c->array[i]->cnt++;
+  //Unknown situation
+  if (name == NULL){
+      c->times_unknown ++;
       return;
-    }
   }
-  c->array = realloc(c->array, (c->size + 1) * sizeof(*c->array));
-  c->array[c->size] = malloc(sizeof(*c->array[c->size]));
-  //c->array[c->size]->string = name;
-  const char * p = name;
-  c->array[c->size]->string = malloc(strlen(name) + 1);  //
-  i = 0;
-  while (*p != '\0') {
-    c->array[c->size]->string[i++] = *p;
-    p++;
+  //If name already exists
+  for (size_t i = 0; i < c->len; i++){
+      //if string1 is equal to string2, strcmp will return 0;
+      if(strcmp(c->type[i]->value, name) == 0){
+          c->type[i]->times ++;
+          return;
+      }
   }
-  c->array[c->size]->string[i] = '\0';
-
-  c->array[c->size]->cnt = 1;
-  c->size++;
+  //Create new
+  c->len ++;
+  c->type = realloc(c->type, c->len * sizeof(*c->type));
+  c->type[c->len - 1] = malloc(sizeof(*c->type[c->len - 1]));
+  c->type[c->len - 1]->value = malloc(sizeof(strlen(name) + 1));
+  int i = 0;
+  while(*name != '\0'){
+      c->type[c->len - 1]->value[i] = *name;
+      name ++;
+      i ++;
+  }
+  c->type[c->len - 1]->value[i] = '\0';
+  c->type[c->len - 1]->times = 1;
+  return;                                                                                                                                        
 }
 void printCounts(counts_t * c, FILE * outFile) {
   //WRITE ME
-  for (int i = 0; i < c->size; i++) {
-    fprintf(outFile, "%s: %d\n", c->array[i]->string, c->array[i]->cnt);
+  for (size_t i = 0; i < c->len; i++){
+      fprintf(outFile, "%s: %zu\n", c->type[i]->value, c->type[i]->times);
   }
-  if (c->cnt_unknown != 0) {
-    fprintf(outFile, "<unknown> : %d\n", c->cnt_unknown);
-  }
+  if(c->times_unknown != 0){
+      fprintf(outFile, "<unknown> : %zu\n", c->times_unknown);
+  }                                                                                                                                          
 }
-
 void freeCounts(counts_t * c) {
-  //WRITE ME
-  for (int i = 0; i < c->size; i++) {
-    free(c->array[i]->string);
-    free(c->array[i]);
+  //WRITE ME                                                                                                                                          
+  for (size_t i = 0; i < c->len; i++){
+      free(c->type[i]->value);
+      free(c->type[i]);
   }
-  free(c->array);
+  free(c->type);
   free(c);
 }
+
