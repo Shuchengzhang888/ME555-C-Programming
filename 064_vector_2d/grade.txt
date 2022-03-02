@@ -1,20 +1,17 @@
-Grading at 03/02/2022:21:20:24.847545
-For commit ID 02da3572e20aff59a7ba0fe3ab0d36c56121a369
-Grading at Wed Mar  2 16:20:24 EST 2022
+Grading at 03/02/2022:21:23:45.286622
+For commit ID 1d400d4112639590d51c873d7e847800c6861b52
+Grading at Wed Mar  2 16:23:45 EST 2022
 Attempting to compile Vector2D
 Tring to run Vector-2D
 Line_1_did_not_match
 Line_2_did_not_match
-Line_3_did_not_match
-Line_4_did_not_match
-Line_5_did_not_match
 Your file did not match the expected output
 Your output did not match what we expected. Here is what you printed
-Vector v1 = 1.00, 2.00 and has magnitude 1.41
-Vector v2 = -1.50, 3.00 and has magnitude 2.12
-v1 + v2 = -0.50, 5.00
-v1 += v2 = -0.50, 5.00
-Now v1 = -0.50, 5.00
+Vector v1 = <1.00, 2.00> and has magnitude 1.41
+Vector v2 = <-1.50, 3.00> and has magnitude 2.12
+v1 + v2 = <-0.50, 5.00>
+v1 += v2 = <-0.50, 5.00>
+Now v1 = <-0.50, 5.00>
 v1 . v2 = 15.75
 
 Overall Grade: F
