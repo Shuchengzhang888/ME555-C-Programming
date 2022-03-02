@@ -33,6 +33,6 @@ double Vector2D::dot(const Vector2D & rhs) const {
 }
 
 void Vector2D::print() const{
-    printf("%.2f, %.2f", x, y);
+    printf("<%.2f, %.2f>", x, y);
 }
 
