@@ -11,7 +11,7 @@ void Vector2D::initVector(double init_x, double init_y){
 }
 
 double Vector2D::getMagnitude() const{
-    return std::sqrt(std::pow(x, 2) + std::pow(x, 2));
+    return std::sqrt(std::pow(x, 2) + std::pow(y, 2));
 }
 
 
