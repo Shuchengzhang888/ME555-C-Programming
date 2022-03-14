@@ -3,11 +3,6 @@
 
 #include <stdlib.h>
 
-struct ror_arr_tag {
-  // WRITE ME
-};
-typedef struct ror_arr_tag ror_arr_t;
-
 struct date_tag {
   unsigned year;
   unsigned month;
@@ -23,4 +18,17 @@ struct ret_portfolio_tag {
 };
 typedef struct ret_portfolio_tag ret_portfolio_t;
 
+struct ror_tag {
+  // WRITE ME
+  date_t dates;
+  double interest;
+};
+typedef struct ror_tag ror_t;
+
+struct ror_arr_tag {
+  // WRITE ME
+  ror_t * ror;
+  size_t len;
+};
+typedef struct ror_arr_tag ror_arr_t;
 #endif
