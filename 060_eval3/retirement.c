@@ -86,13 +86,13 @@ ror_arr_t * read_data(FILE * f, size_t index){
   double index_level = 0;
   //jump first line
   getline(&line, &sz, f);
-  line = NULL;
+  //line = NULL;
   //free(line);
   while( getline(&line, &sz, f) > 2){
     ror_arr->len ++;
     ror_arr->ror = realloc(ror_arr->ror, ror_arr->len * sizeof(* ror_arr->ror));
     index_level = save_data(line, &ror_arr->ror[ror_arr->len - 1], index, index_level);
-    line = NULL;
+    //line = NULL;
   }
   free(line);
 
@@ -278,9 +278,9 @@ void write_file(ret_portfolio_t * equities, ret_portfolio_t * bonds, ret_portfol
 }
 void free_interest_array(ror_arr_t * sp_array, ror_arr_t * bond_array){
   for(int i = sp_array->len; i > 0; i--){
-    free(&(sp_array[i]));
+    //free(&(sp_array[i]));
   }
-  //free(sp_array->ror);
+  free(sp_array->ror);
   free(sp_array);
   for(int i = bond_array->len; i > 0; i--){
     //free(bond_array->ror + i);
