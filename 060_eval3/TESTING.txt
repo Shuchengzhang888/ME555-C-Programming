@@ -1,0 +1,71 @@
+Testing valid cases
+#Success#
+./ret_portfolio sp_data.csv bond_data.csv 1971.12 2017.12
+./ret_portfolio bond_data.csv sp_data.csv 1971.12 2017.12
+./ret_portfolio sp_data.csv bond_data.csv 1990.12 2001.03
+
+#Fail#
+1.There are no 5 command line arguments.
+./ret_portfolio sp_data.csv 1971.12 2017.12
+./ret_portfolio sp_data.csv bond_data.csv 1971.12 2017.12 2017.12
+
+2.File name or date is not valid.
+./ret_portfolio sp.csv bond.csv 1971.12 2017.12
+./ret_portfolio a b 1971.12 2017.12
+./ret_portfolio sp_data.csv bond_data.csv a 2017.12
+./ret_portfolio sp_data.csv bond_data.csv 1971.12 b
+
+3.Files are both sp or bonds.
+./ret_portfolio sp_data.csv sp_data.csv 1971.12 2017.12
+./ret_portfolio bond_data.csv bond_data.csv 1971.12 2017.12
+
+4.Date is beyond the data
+./ret_portfolio sp_data.csv bond_data.csv 1970.12 2017.12
+./ret_portfolio sp_data.csv bond_data.csv 1971.12 2018.12
+./ret_portfolio sp_data.csv bond_data.csv 1975.12 1974.12
+
+
+
+Invalid data inputs
+#Fail#
+1. There is no content in file.
+    "\n"
+
+2. The format is not valid:
+    (1)sp: there is no one '.' and two ',' in each line.
+    "197001,90.31,3.16"
+    "1970.01,90.31"
+    "1970.01"
+    (2)bond:there is no one '.' and one ',' in each line.
+    "197001,7.79"
+    "1970.01"
+
+3. The content is not valid:
+    (1)year: not 4 digits, not all numbers, start with 0.
+    "197.01,90.31,3.16"
+    "19d0.01,90.31,3.16"
+    "0970.01,90.31,3.16"
+    (2)month: not 2 digits, not all numbers, not between 1 to 12.
+    "1970.1,90.31,3.16"
+    "1970.b1,90.31,3.16"
+    "1970.15,90.31,3.16"
+    (3)level, dividend and price: not all numbers or '.'.
+    "1970.01,9d.31,3.16"
+    "1970.01,90.31,d.16"
+    "1970.01,09.31,3.16"
+    "1970.01,90.31,03.16"
+
+4. CSV file loses a line.
+    "1970.01,7.79"
+    "\n"
+    "1970.01,7.79"
+
+5. The dates of data is not consecutive or wrong.
+    "1970.01,7.79"
+    "1970.03,7.79" or
+    "1970.01,7.79"
+    "1971.01,7.79" or
+    "1970.12,7.79"
+    "1970.01,7.79"
+
+6. Three method results have different lengths.
