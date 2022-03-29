@@ -68,7 +68,7 @@ const IntArray & IntMatrix::operator[](int index) const{
 bool IntMatrix::operator==(const IntMatrix & rhs) const{
     if((numRows == rhs.numRows) && (numColumns == rhs.numColumns)){
         for(int i = 0; i < numRows; i++){
-            if(rows[i] != rhs.rows[i]){
+	  if((*this)[i] != rhs[i]){
                 return false;
             }
         }
