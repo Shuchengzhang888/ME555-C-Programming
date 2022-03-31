@@ -8,96 +8,136 @@
 
 
 //YOUR CODE GOES HERE!
-template<typename T>
-class Matrix {
- private:
-  int numRows;
-  int numColumns;
-  std::vector<std::vector<T> > rows;
-
+template<typename T> 
+class Matrix{
+  private:
+    int numRows;
+    int numColumns;
+    //new ??
+    std::vector<std::vector<T> > rows;
  public:
-  Matrix() : numRows(0), numColumns(0) {}
-  Matrix(int r, int c) : numRows(r), numColumns(c) {
-    for (int i = 0; i < numRows; i++) {
-      std::vector<T> row(c);
-      rows.push_back(row);
+    Matrix();
+    Matrix(int r, int c);
+    Matrix(const Matrix & rhs);
+    ~Matrix();
+    Matrix & operator=(const Matrix & rhs);
+    int getRows() const;
+    int getColumns() const;
+    const std::vector<T> & operator[](int index) const;
+    std::vector<T> & operator[](int index);
+    bool operator==(const Matrix & rhs) const;
+    Matrix operator+(const Matrix & rhs) const;
+    // friend std::ostream & operator<<(std::ostream & s, const std::vector<T> & rhs);
+    // friend std::ostream & operator<<(std::ostream & s, const Matrix & rhs);
+
+};
+
+template<typename T> 
+std::ostream & operator<<(std::ostream & s, const std::vector<T> & row);
+template<typename T> 
+std::ostream & operator<<(std::ostream & s, const Matrix<T> & rhs);
+
+
+
+template<typename T> 
+Matrix<T>::Matrix(): numRows(0), numColumns(0) {}
+
+template<typename T>
+Matrix<T>::Matrix(int r, int c): numRows(r), numColumns(c){
+    for (int i = 0; i < numRows; i++){
+        //Build a vector "row" with c column, put "row" in "rows" r times
+        std::vector<T> row(c);
+        rows.push_back(row);
     }
-  }
-  Matrix(const Matrix & rhs) : numRows(rhs.numRows), numColumns(rhs.numColumns) {
+}
+
+template<typename T>
+Matrix<T>::Matrix(const Matrix & rhs){
+    numRows = rhs.numRows;
+    numColumns = rhs.numColumns;
     rows = rhs.rows;
-  }
-  ~Matrix() {}
-  Matrix & operator=(const Matrix & rhs) {
-    if (this != &rhs) {
-      rows.clear();
-      numRows = rhs.numRows;
-      numColumns = rhs.numColumns;
-      rows = rhs.rows;
+}
+
+template<typename T>
+Matrix<T>::~Matrix(){}
+
+template<typename T>
+Matrix<T> & Matrix<T>::operator=(const Matrix & rhs){
+    if(this != & rhs){
+        rows.clear();
+        numRows = rhs.numRows;
+        numColumns = rhs.numColumns;
+        rows = rhs.rows;
     }
     return *this;
-  }
-  int getRows() const { return numRows; }
-  int getColumns() const { return numColumns; }
-  const std::vector<T> & operator[](int index) const {
+}
+
+template<typename T>
+int Matrix<T>::getRows() const{
+    return numRows;
+}
+
+template<typename T>
+int Matrix<T>::getColumns() const{
+    return numColumns;
+}
+
+template<typename T>
+const std::vector<T> & Matrix<T>::operator[](int index) const{
     assert((index >= 0) && (index < numRows));
     return rows[index];
-  }
-  std::vector<T> & operator[](int index) {
+}
+
+template<typename T>
+std::vector<T> & Matrix<T>::operator[](int index){
     assert((index >= 0) && (index < numRows));
     return rows[index];
-  }
+}
 
-  bool operator==(const Matrix & rhs) const {
-    if (numRows != rhs.numRows || numColumns != rhs.numColumns) {
-      return false;
-    }
-
-    if (rows != rhs.rows) {
-      return false;
+template<typename T>
+bool Matrix<T>::operator==(const Matrix<T> & rhs) const{
+    if (numRows != rhs.numRows || numColumns != rhs.numColumns || rows != rhs.rows){
+        return false;
     }
     return true;
-  }
-
-  Matrix operator+(const Matrix & rhs) const {
+}
+template<typename T>
+Matrix<T> Matrix<T>::operator+(const Matrix<T> & rhs) const{
     assert((numRows == rhs.numRows) && (numColumns == rhs.numColumns));
-    Matrix res(numRows, numColumns);
+    Matrix<T> res(numRows, numColumns);
     for (int i = 0; i < numRows; i++) {
-      for (int j = 0; j < numColumns; j++) {
-        res[i][j] = rows[i][j] + rhs[i][j];
-      }
+        for (int j = 0; j < numColumns; j++) {
+            res[i][j] = rows[i][j] + rhs[i][j];
+        }
     }
     return res;
   }
-};
 
-template<typename T>
-std::ostream & operator<<(std::ostream & s, const Matrix<T> & rhs) {
-  if (rhs.getRows() == 0) {
-    s << "[ ]";
+template<typename T> 
+std::ostream & operator<<(std::ostream & s, const std::vector<T> & row){
+    s << "{";
+    for(size_t i = 0; i < row.size(); i++){
+        s << row[i];
+        if (i != row.size() - 1){
+            s << ",";
+        }
+    }
+    s << "}";
     return s;
-  }
-  s << "[ ";
-  for (int i = 0; i < rhs.getRows(); i++) {
-    s << rhs[i];
-
-    if (i != rhs.getRows() - 1) {
-      s << ", \n";
-    }
-  }
-  s << " ]";
-  return s;
 }
-template<typename T>
-std::ostream & operator<<(std::ostream & s, const std::vector<T> & rhs) {
-  s << "{";
-  for (size_t i = 0; i < rhs.size(); i++) {
-    s << rhs[i];
 
-    if (i != rhs.size() - 1) {
-      s << ",";
+template<typename T> 
+std::ostream & operator<<(std::ostream & s, const Matrix<T> & rhs){
+    s << "[";
+    for(int i = 0; i < rhs.getRows(); i++){
+        //Next fuction is used here
+        s << rhs[i];
+        if(i != rhs.getRows() - 1){
+            s << ", \n";
+        }
     }
-  }
-  s << "}";
-  return s;
+    s << "]";
+    return s;
 }
+
 #endif
