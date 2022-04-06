@@ -1,0 +1,21 @@
+Grading at 04/06/2022:20:03:35.261382
+For commit ID 39651964487a0b8f7427cc4415ded5143030bbe9
+Grading at Wed Apr  6 16:03:31 EDT 2022
+Attempting to compile:
+rm -f *~ todo_list
+g++ -o todo_list -std=gnu++98 -Wall -Werror -ggdb3 todo_list.cpp
+Found binary 'todo_list'
+Test case 1
+Correctly identified error case
+Test case 2
+Correctly identified error case
+Test case 3
+Your output matched what we expected
+Test case 4
+Your output matched what we expected
+Test case 5
+Your output matched what we expected
+Test case 6
+Your output matched what we expected
+
+Overall Grade: PASSED
