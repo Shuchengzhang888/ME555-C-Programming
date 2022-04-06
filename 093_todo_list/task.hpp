@@ -10,8 +10,14 @@ class TaskDep {
 
  public:
   // write these
-  TaskDep(const task_t & t);
-  const task_t & getTask() const;
-  void addPredecessor(const task_t & t);
-  std::list<task_t> getPredecessors() const;
+  TaskDep(const task_t & t): task(t){}
+  const task_t & getTask() const{
+    return task;
+  }
+  void addPredecessor(const task_t & t){
+    pres.push_back(t);
+  }
+  std::list<task_t> getPredecessors() const{
+    return pres;
+  }
 };
