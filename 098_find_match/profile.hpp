@@ -5,8 +5,10 @@
 #include <string>
 
 //declare class Profile
-
+class Profile;
 //declare explicit specialization for std::hash<Profile>
+template<>
+struct std::hash<Profile>;
 
 //provided Qualities class
 class Qualities {
@@ -43,8 +45,19 @@ class Profile {
   bool isMatch(const Qualities & q) const;
   friend std::ostream & operator<<(std::ostream & os, const Profile & rhs);
   //add a friend, maybe
+  friend struct std::hash<Profile>;
 };
 
 //specialize std::hash<Profile>
+template<>
+struct std::hash<Profile>{
+    //rewrite function operator() in std:hash
+    //operator(): Returns a hash value for its argument, as a value of type size_t.
+    size_t operator()(const Profile & rhs) const {
+        //hash function: str_hash
+        std::hash<std::string> str_hash;
+        return str_hash(rhs.username);
+    }
+};
 
 #endif

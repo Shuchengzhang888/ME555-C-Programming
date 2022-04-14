@@ -34,3 +34,35 @@ std::ostream & operator<<(std::ostream & os, const Profile & rhs) {
   os << std::endl;
   return os;
 }
+Profile::Profile(const std::string & un, int a, double h, int at) : username(un), age(a), height(h), attractiveness(at){}
+
+void Profile::addInterest(const std::string & inter){
+    //std::set.inset(element) 
+    interests.insert(inter);
+}
+
+bool Profile::operator==(const Profile & rhs) const{
+    if (username == rhs.username && age == rhs.age && height == rhs.height && attractiveness == rhs.attractiveness && interests == rhs.interests){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+bool Profile::isMatch(const Qualities & q) const{
+    if(age > q.age_max || age < q.age_min || height > q.height_max || height < q.height_min || attractiveness > q.attr_max || attractiveness < q.attr_min){
+        return false;
+    }
+    std::set<std::string>::iterator iter = q.inter_req.begin();
+    while(iter != q.inter_req.end()){
+        //set.count: returns the number of elements matching specific key
+        //*iter, key
+        if(interests.count(*iter) == 0){
+            return false;
+        }
+        ++iter;
+    }
+    return true;
+
+}

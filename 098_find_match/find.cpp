@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include <unordered_set>
+#include <exception>
 
 #include "profile.hpp"
 
@@ -72,11 +73,60 @@ Qualities getQuals(std::ifstream & f) {
   return Qualities(a_min, a_max, h_min, h_max, at_min, at_max, i_req);
 }
 
+
+class invalid_command_line : public std::exception{
+  public:
+    const char * what() const throw(){
+        return "Invalid Command Line.";
+    }
+};
+class invalid_file : public std::exception{
+  public:
+    const char * what() const throw(){
+        return "Invalid File.";
+    }
+};
+
 int main(int argc, char ** argv) {
   // open files for reading
+    try{
+        if(argc != 3){
+            throw invalid_command_line();
+        }
+    }
+    catch (invalid_command_line & e){
+        std::cerr << e.what()<< std::endl;
+        exit(EXIT_FAILURE);
+    }
+
+    std::ifstream fp(argv[1]);
+    std::ifstream fq(argv[2]);
+    try{
+        if(!(fq.is_open() && fp.is_open())){
+            throw invalid_file();
+        }
+    }
+    catch (invalid_file & e){
+        std::cerr << e.what()<< std::endl;
+        exit(EXIT_FAILURE);
+    }
   // read all profiles
+  std::unordered_set<Profile> p = readProfiles(fp);
   // read quals
+  Qualities q = getQuals(fq);
   // remove profiles that don't match qualities
+  std::unordered_set<Profile>::iterator iter = p.begin();
+  while(iter != p.end()){
+      if(!iter->isMatch(q)){
+          iter = p.erase(iter);
+      }
+      else{
+          ++iter;
+      }
+  }
   // print profiles that match
+  for(iter = p.begin(); iter != p.end(); ++iter){
+    std::cout << *iter;
+  }
   return EXIT_SUCCESS;
 }
