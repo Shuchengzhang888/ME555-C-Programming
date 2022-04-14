@@ -1,21 +1,104 @@
-Grading at 03/25/2022:00:35:30.193990
+Grading at 04/14/2022:02:44:46.664997
 For commit ID 7a146b66f044c6dc59e8ac8622a4b5481f1053c4
-Grading at Thu Mar 24 20:35:29 EDT 2022
+Grading at Wed Apr 13 22:44:35 EDT 2022
 rm -f *~ *.o ret_portfolio
-Doing some basic checking for your submission.
-
-Attempting to compile 
+Attempting to compile ret_portfolio
 gcc -o ret_portfolio -std=gnu99 -pedantic -Wall -Werror -ggdb3 retirement.c
-The code compiled (good)
+The code compiled.
 
-Doing test ./ret_portfolio sp_data.csv bond_data.csv 1971.12 2017.12
+=========================================================================
+Functionality
+
++-----------------------------------------------------------------------+
+Test case 1
+Command line arguments are not enough.
+Your program successfully indicated a failure case
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 2
+Cannot read the input file.
+Your program successfully indicated a failure case
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 3
+Cannot read the input file.
+Your program successfully indicated a failure case
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 4
+Illegal input date in csv.Your program successfully indicated a failure case
+                                                         [3/3]
++-----------------------------------------------------------------------+
+Test case 5
+Start or end date is illegal.
+Your program successfully indicated a failure case
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 6
+Start or end date is illegal.
+Your program successfully indicated a failure case
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 7
+Start or end date is illegal.
+Your program successfully indicated a failure case
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 8
+Command line arguments are not enough.
+Your program successfully indicated a failure case
+                                                         [2/2]
++-----------------------------------------------------------------------+
+Test case 9
 Your file matched the expected output
-Doing test ./ret_portfolio sp_data.csv bond_data.csv 1972.01 1974.01
+                                                         [30/30]
++-----------------------------------------------------------------------+
+Test case 10
 Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 11
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 12
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 13
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 14
+Your file matched the expected output
+                                                         [5/5]
++-----------------------------------------------------------------------+
+Test case 15
+Your file matched the expected output
+                                                         [5/5]
 
-Found TESTING.txt (good)
+Functionality total                                      [80/80]
 
-You have passed the pregrader tests
-You should still run comprehensive tests of your own
+=========================================================================
+Testing
 
-Overall Grade: NO GRADE YET
+Comments:
+Good test cases
+
+Testing total                                            [10/10]
+
+=========================================================================
+Code quality
+
+Abstration:    Excellent
+Naming:        Excellent
+Formatting:    Excellent
+Documentation: Excellent
+Comments:
+Excellent work.  Very high quality code, excellent documentation.
+
+Quality total                                            [10/10]
+
+=========================================================================
+
+Overall Grade: 100
