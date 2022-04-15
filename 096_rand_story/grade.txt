@@ -1,80 +1,80 @@
-Grading at 04/14/2022:23:17:41.254678
-For commit ID 7805703e2501857a22527e2dfda24263c66ad953
-Grading at Thu Apr 14 19:17:28 EDT 2022
+Grading at 04/15/2022:00:21:34.589162
+For commit ID 5667c6e1b2aa0a940de6d46caf20107fd66733a5
+Grading at Thu Apr 14 20:21:21 EDT 2022
 running passed-in stu_imp ./rand_story
 [32mSuccessfully compiled.[0m
 ********************test case 1********************
 No command line args
 Exit status of your code: 1
-[31mtest case 1 Error: valgrind was not clean,here are error suggestions:[0m
-[31mfailed test case 1[0m
+[32mValgrind was clean[0m
+[32mCorrect: your code indicates this is a failure case.[0m
+[32mpassed test case 1[0m
 ********************test case 2********************
 Too few command line args
 Exit status of your code: 1
-[31mtest case 2 Error: valgrind was not clean,here are error suggestions:[0m
-[31mfailed test case 2[0m
+[32mValgrind was clean[0m
+[32mCorrect: your code indicates this is a failure case.[0m
+[32mpassed test case 2[0m
 ********************test case 3********************
 Too many command line args
 Exit status of your code: 1
-[31mtest case 3 Error: valgrind was not clean,here are error suggestions:[0m
-[31mfailed test case 3[0m
+[32mValgrind was clean[0m
+[32mCorrect: your code indicates this is a failure case.[0m
+[32mpassed test case 3[0m
 ********************test case 4********************
 Invalid story file
 Exit status of your code: 1
-[31mtest case 4 Error: valgrind was not clean,here are error suggestions:[0m
-[31mfailed test case 4[0m
+[32mValgrind was clean[0m
+[32mCorrect: your code indicates this is a failure case.[0m
+[32mpassed test case 4[0m
 ********************test case 5********************
 Invalid words file
 Exit status of your code: 1
-[31mtest case 5 Error: valgrind was not clean,here are error suggestions:[0m
-[31mfailed test case 5[0m
+[32mValgrind was clean[0m
+[32mCorrect: your code indicates this is a failure case.[0m
+[32mpassed test case 5[0m
 ********************test case 6********************
 Invalid random seed
 Exit status of your code: 1
-[31mtest case 6 Error: valgrind was not clean,here are error suggestions:[0m
-[31mfailed test case 6[0m
+[32mValgrind was clean[0m
+[32mCorrect: your code indicates this is a failure case.[0m
+[32mpassed test case 6[0m
 ********************test case 7********************
 Random seed 1
 Exit status of your code: 0
 [32mValgrind was clean[0m
-Your output has 0 lines, but we expected 4 lines.
-[31mIncorrect: your output did not match the expected output.[0m
-[31mfailed test case 7[0m
+[32mCorrect: your output matched the expected output.[0m
+[32mpassed test case 7[0m
 ********************test case 8********************
 Random seed 13
 Exit status of your code: 0
 [32mValgrind was clean[0m
-Your output has 0 lines, but we expected 4 lines.
-[31mIncorrect: your output did not match the expected output.[0m
-[31mfailed test case 8[0m
+[32mCorrect: your output matched the expected output.[0m
+[32mpassed test case 8[0m
 ********************test case 9********************
 Random seed 27
 Exit status of your code: 0
 [32mValgrind was clean[0m
-Your output has 0 lines, but we expected 4 lines.
-[31mIncorrect: your output did not match the expected output.[0m
-[31mfailed test case 9[0m
+[32mCorrect: your output matched the expected output.[0m
+[32mpassed test case 9[0m
 ********************test case 10********************
 Random seed 32
 Exit status of your code: 0
 [32mValgrind was clean[0m
-Your output has 0 lines, but we expected 4 lines.
-[31mIncorrect: your output did not match the expected output.[0m
-[31mfailed test case 10[0m
+[32mCorrect: your output matched the expected output.[0m
+[32mpassed test case 10[0m
 ********************test case 11********************
 Random seed 48
 Exit status of your code: 0
 [32mValgrind was clean[0m
-Your output has 0 lines, but we expected 4 lines.
-[31mIncorrect: your output did not match the expected output.[0m
-[31mfailed test case 11[0m
+[32mCorrect: your output matched the expected output.[0m
+[32mpassed test case 11[0m
 ********************test case 12********************
 Random seed 99
 Exit status of your code: 0
 [32mValgrind was clean[0m
-Your output has 0 lines, but we expected 4 lines.
-[31mIncorrect: your output did not match the expected output.[0m
-[31mfailed test case 12[0m
+[32mCorrect: your output matched the expected output.[0m
+[32mpassed test case 12[0m
 ********************test case 13********************
 Number refers past beginning of story
 Exit status of your code: 1
@@ -94,8 +94,7 @@ Exit status of your code: 1
 Word file with long words
 Exit status of your code: 0
 [32mValgrind was clean[0m
-Your output has 0 lines, but we expected 4 lines.
-[31mIncorrect: your output did not match the expected output.[0m
-[31mfailed test case 16[0m
-[31mfailed 13 out of 16 test cases[0m
-Overall Grade: F
+[32mCorrect: your output matched the expected output.[0m
+[32mpassed test case 16[0m
+[32msuccessfully passed all 16 test cases[0m
+Overall Grade: A
