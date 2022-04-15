@@ -8,26 +8,9 @@
 #include <vector>
 #include <exception>
 
-#define output_name "output.txt"
+//#define output_name "output.txt"
 
-class invalid_command_line : public std::exception{
-  public:
-    const char * what() const throw(){
-        return "Invalid Command Line.";
-    }
-};
-class invalid_file : public std::exception{
-  public:
-    const char * what() const throw(){
-        return "Invalid File.";
-    }
-};
-class invalid_seed : public std::exception{
-  public:
-    const char * what() const throw(){
-        return "Invalid Seed Number.";
-    }
-};
+
 class invalid_input : public std::exception{
   public:
     const char * what() const throw(){
@@ -130,62 +113,48 @@ std::vector<std::string> write_story(std::ifstream & f_story, std::map<std::stri
 }
 
 void print_story(std::vector<std::string> story){
-    std::ofstream OutFile(output_name);
+  //std::ofstream OutFile(output_name);
     std::vector<std::string>::iterator iter;
     for(iter = story.begin(); iter != story.end(); ++iter){
         if(iter == story.end() - 1){
-            OutFile << *iter << std::endl;
+	  std::cout << *iter << std::endl;
         }
         else{
-            OutFile << *iter << "\n";
+	  std::cout << *iter << "\n";
         }
     }
     
-    OutFile.close();
+    //OutFile.close();
 }
 
 int main(int argc, char ** argv){
-    try{
-        if(argc != 4){
-            throw invalid_command_line();
+       if(argc != 4){
+            fprintf(stderr, "Invalid command line arguments\n");
+            return EXIT_FAILURE;
         }
         std::ifstream f_story(argv[1]);
         std::ifstream f_words(argv[2]);
         if(!(f_story.is_open() && f_words.is_open())){
-            throw invalid_file();
+            fprintf(stderr, "Invalid file name\n");
+            return EXIT_FAILURE;
         }
         //set random seed
         int r = atoi(argv[3]);
         if(r <= 0){
-            throw invalid_seed();
+            fprintf(stderr, "Invalid seed number\n");
+            return EXIT_FAILURE;
         }
         //For every different seed value used in a call to srand, the pseudo-random number generator 
         // can be expected to generate a different succession of results in the subsequent calls to rand.
         //srand(r)会影响rand()的值
         srand(r);
-	
-	//read words and save them to map
         std::map<std::string, std::vector<std::string> > words;
         words = read_words(f_words);
-	//read story template and write story to vector
         std::vector<std::string> story;
         story = write_story(f_story, words);
         print_story(story);
         f_story.close();
         f_words.close();
-    }
-    catch (invalid_command_line & e){
-        std::cerr << e.what()<< std::endl;
-        exit(EXIT_FAILURE);
-    }
-    catch (invalid_file & e){
-        std::cerr << e.what()<< std::endl;
-        exit(EXIT_FAILURE);
-    }
-    catch(invalid_seed & e){
-        std::cerr << e.what()<< std::endl;
-        exit(EXIT_FAILURE);
-    }
-
+	
     return EXIT_SUCCESS;
 }
