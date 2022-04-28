@@ -1,0 +1,153 @@
+Path Planning Test Case
+
+Step 1-4 can be run separately and all test case will be in step3 and step4.
+
+#Step1#
+Command: 
+    ./step1 grid_map.txt
+Output: 
+    (0,0) (0.5,0) (1,0) (1.5,0) (2,0) (2.5,0) (0,0.4) (0.5,0.4) (1,0.4) (1.5,0.4) (2,0.4) (2.5,0.4) (0,0.8) (0.5,0.8) (1,0.8) (1.5,0.8) (2,0.8) (2.5,0.8) (0,1.2) (0.5,1.2) (1,1.2) (1.5,1.2) (2,1.2) (2.5,1.2)
+    0: 1,0.5 6,0.4 7,0.640312
+    1: 0,0.5 2,0.5 6,0.640312 7,0.4 8,0.640312
+    2: 1,0.5 3,0.5 7,0.640312 8,0.4 9,0.640312
+    3: 2,0.5 4,0.5 8,0.640312 9,0.4 10,0.640312
+    4: 3,0.5 5,0.5 9,0.640312 10,0.4 11,0.640312
+    5: 4,0.5 10,0.640312 11,0.4
+    6: 0,0.4 1,0.640312 7,0.5 12,0.4 13,0.640312
+    7: 0,0.640312 1,0.4 2,0.640312 6,0.5 8,0.5 12,0.640312 13,0.4 14,0.640312
+    8: 1,0.640312 2,0.4 3,0.640312 7,0.5 9,0.5 13,0.640312 14,0.4 15,0.640312
+    9: 2,0.640312 3,0.4 4,0.640312 8,0.5 10,0.5 14,0.640312 15,0.4 16,0.640312
+    10: 3,0.640312 4,0.4 5,0.640312 9,0.5 11,0.5 15,0.640312 16,0.4 17,0.640312
+    11: 4,0.640312 5,0.4 10,0.5 16,0.640312 17,0.4
+    12: 6,0.4 7,0.640312 13,0.5 18,0.4 19,0.640312
+    13: 6,0.640312 7,0.4 8,0.640312 12,0.5 14,0.5 18,0.640312 19,0.4 20,0.640312
+    14: 7,0.640312 8,0.4 9,0.640312 13,0.5 15,0.5 19,0.640312 20,0.4 21,0.640312
+    15: 8,0.640312 9,0.4 10,0.640312 14,0.5 16,0.5 20,0.640312 21,0.4 22,0.640312
+    16: 9,0.640312 10,0.4 11,0.640312 15,0.5 17,0.5 21,0.640312 22,0.4 23,0.640312
+    17: 10,0.640312 11,0.4 16,0.5 22,0.640312 23,0.4
+    18: 12,0.4 13,0.640312 19,0.5
+    19: 12,0.640312 13,0.4 14,0.640312 18,0.5 20,0.5
+    20: 13,0.640312 14,0.4 15,0.640312 19,0.5 21,0.5
+    21: 14,0.640312 15,0.4 16,0.640312 20,0.5 22,0.5
+    22: 15,0.640312 16,0.4 17,0.640312 21,0.5 23,0.5
+    23: 16,0.640312 17,0.4 22,0.5
+
+#Step2#
+Command: 
+    ./step2 grid_map.txt 0 23
+Output:
+    0 1 2 9 16 23 : 2.92094
+
+#Step3#
+Command:
+    ./step3 grid_map.txt obstacle.txt 0 23
+Output:
+    0 6 13 20 21 22 23 : 3.18062
+
+##Test Case##
+1. Command line Test Case
+(1)Command line is not 5
+    ./step3 grid_map.txt obstacle.txt 0 
+    Invalid Command Line.
+(2)Cannot open file
+    ./step3 grid.txt obstacle.txt 0 23
+    Invalid File.
+(3)The start or goal is not legal
+    ./step3 grid_map.txt obstacle.txt 0 24
+    ./step3 grid_map.txt obstacle.txt -1 24
+    ./step3 grid_map.txt obstacle.txt 3 2
+    Invalid Command Line.
+(4)Other situation about start or goal
+    ./step3 grid_map.txt obstacle.txt 1 23
+    1 7 13 20 21 22 23 : 2.94031
+    ./step3 grid_map.txt obstacle.txt 1 1
+    No Path Exists.
+
+2. Test Case in grid_map.txt
+(1) Input file does not has $nodes or $edges
+    ./step3 grid_map_321.txt obstacle.txt 0 23
+    Wrong Input Format.
+(2) Wrong order of $nodes or $edges
+    ./step3 grid_map_322.txt obstacle.txt 0 23
+    Wrong Input Format.
+(3) Node input has letter or does not has two spaces
+    ./step3 grid_map_3231.txt obstacle.txt 0 23
+    Wrong Input Format.
+    ./step3 grid_map_3232.txt obstacle.txt 0 23
+    Wrong Input Format.
+(4) Node has negative coordinate
+    ./step3 grid_map_324.txt obstacle.txt 0 23
+    0 7 13 20 21 22 23 : 3.18062
+(5) Node index is not consecutive (like 1 2 4 3)
+    ./step3 grid_map_325.txt obstacle.txt 0 23
+    0 6 13 20 21 22 23 : 3.18062
+(6) Edge input has letter or does not has one space
+    ./step3 grid_map_3261.txt obstacle.txt 0 23
+    Wrong Input Format.
+    ./step3 grid_map_3262.txt obstacle.txt 0 23
+    Wrong Input Format.
+(7) Edge u v is not legal(out of range, smaller than 0)
+    ./step3 grid_map_3271.txt obstacle.txt 0 23
+    Invalid Input Nodes.
+    ./step3 grid_map_3272.txt obstacle.txt 0 23
+    Invalid Input Nodes.
+
+3. Test Case in obstacle.txt
+(1) Obstacles does not has $obstacles
+    ./step3 grid_map.txt obstacle_331.txt 0 23
+    Wrong Input Format.
+(2) Obstacles input has letter
+    ./step3 grid_map.txt obstacle_332.txt 0 23
+    Wrong Input Format.
+(3) Several obstacles
+    ./step3 grid_map.txt obstacle_333.txt 0 23
+    0 6 12 19 20 21 22 23 : 3.44031
+(4) Each obstacle has more or less 3 nodes
+    ./step3 grid_map.txt obstacle_334.txt 0 23
+    0 6 13 20 21 22 23 : 3.18062
+(5) No obstacles
+    ./step3 grid_map.txt obstacle_335.txt 0 23
+    No Obstacles.
+(6) Obstacle just has one nodes
+    ./step3 grid_map.txt obstacle_336.txt 0 23
+    0 1 2 9 16 23 : 2.92094
+
+4. Test Case about "No path exist"
+(1) Obstacles
+    ./step3 grid_map.txt obstacle_341.txt 0 23
+    No path exist
+(2) No way
+    Cannot find a case in this map
+(3) Start or goal is illegal
+    Test before
+
+#Step4#
+Command:
+    ./step4 grid_map.txt obstacle.txt 0 23 -a
+Output:
+    0 7 13 20 21 22 23 : 3.18062
+
+##Test Case##
+1. Command line Test Case 
+(1) Command line is not 5 or 6
+    ./step4 grid_map.txt obstacle.txt 0 23 -a 0
+    Invalid Command Line.
+(2) If there is 6 Command lines, the last one is not -a
+    ./step4 grid_map.txt obstacle.txt 0 23 -b
+    Invalid Command Line.
+(3) Command line is 5 (use dijkstra)
+    ./step4 grid_map.txt obstacle.txt 0 23
+    0 6 13 20 21 22 23 : 3.18062
+(4)Other situation about start or goal
+    ./step4 grid_map.txt obstacle.txt 1 5
+    1 7 13 20 15 10 5 : 3.36125
+    ./step4 grid_map.txt obstacle.txt 1 1
+    No Path Exists.
+
+2. Test Case in obstacle.txt
+(1) Each obstacle has more or less 3 nodes
+    ./step4 grid_map.txt obstacle_421.txt 0 23
+    No Path Exists.
+(2) Several obstacles
+    ./step4 grid_map.txt obstacle_422.txt 0 23
+    0 6 12 19 20 21 22 23 : 3.44031

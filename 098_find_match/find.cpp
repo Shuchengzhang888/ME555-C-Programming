@@ -96,7 +96,7 @@ int main(int argc, char ** argv) {
     }
     catch (invalid_command_line & e){
         std::cerr << e.what()<< std::endl;
-        exit(EXIT_FAILURE);
+        return EXIT_FAILURE;
     }
 
     std::ifstream fp(argv[1]);
