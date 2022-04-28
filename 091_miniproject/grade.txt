@@ -1,0 +1,26 @@
+Grading at 04/28/2022:20:16:09.325069
+For commit ID 441e7f2326ccc32ef02d441ad083c703820d399a
+Grading at Thu Apr 28 16:16:09 EDT 2022
+Doing some basic checking for your submission.
+
+Attempting to compile
+cmake
+make clean
+make
+make: Nothing to be done for 'all'.
+
+I did not recognize an executable name. Did you name your executables xxx-stepx as described in the README?
+Checking make clean and make by removing all executables
+Running make again
+make: Nothing to be done for 'all'.
+Step 1: NOT found
+Step 2: NOT found
+Step 3: NOT found
+Step 4: NOT found
+
+Found TESTING.txt (good)
+
+You have NOT passed the pregrader tests
+You should debug the indicated tests
+
+Overall Grade: NO GRADE YET
