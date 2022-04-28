@@ -1,6 +1,6 @@
-Grading at 04/28/2022:20:16:09.325069
-For commit ID 441e7f2326ccc32ef02d441ad083c703820d399a
-Grading at Thu Apr 28 16:16:09 EDT 2022
+Grading at 04/28/2022:20:23:26.711076
+For commit ID b5d380623889df634eafcbb9ac42815f68efa07a
+Grading at Thu Apr 28 16:23:22 EDT 2022
 Doing some basic checking for your submission.
 
 Attempting to compile
@@ -9,18 +9,21 @@ make clean
 make
 make: Nothing to be done for 'all'.
 
-I did not recognize an executable name. Did you name your executables xxx-stepx as described in the README?
+You have chosen the Path Planning miniproject!
 Checking make clean and make by removing all executables
 Running make again
-make: Nothing to be done for 'all'.
-Step 1: NOT found
-Step 2: NOT found
-Step 3: NOT found
-Step 4: NOT found
+g++ -o path-step1 -std=gnu++98 -Wall -Werror -ggdb3 path-step1-main.cpp
+g++ -o path-step2 -std=gnu++98 -Wall -Werror -ggdb3 path-step2-main.cpp
+g++ -o path-step3 -std=gnu++98 -Wall -Werror -ggdb3 path-step3-main.cpp
+g++ -o path-step4 -std=gnu++98 -Wall -Werror -ggdb3 path-step4-main.cpp
+Step 1: found
+Step 2: found
+Step 3: found
+Step 4: found
 
 Found TESTING.txt (good)
 
-You have NOT passed the pregrader tests
-You should debug the indicated tests
+You have the passed the pregrader tests
+You should still run comprehensive tests of your own
 
 Overall Grade: NO GRADE YET
