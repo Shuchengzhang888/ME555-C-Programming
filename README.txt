@@ -1,11 +1,8 @@
-Welcome to your intro_prog git repository.
+# Duke ME555 C and C++ Programming
+## Reference
+All of Programming
 
-The first thing you should do is 
+https://play.google.com/store/books/details/Andrew_Hilton_All_of_Programming?id=-zViCgAAQBAJ
 
-git pull
-
-Once you have done that, you will see your initial assignments. As you
-complete assignments, more will be released. 
-
-You should start with 000_submit, which will help you familiarize yourself
-with git, view-grades, and grade.
+## Final Project
+C++ Implement of Autonomous Vehicle Path Planning Algorithm (A* and Dijkstra)
